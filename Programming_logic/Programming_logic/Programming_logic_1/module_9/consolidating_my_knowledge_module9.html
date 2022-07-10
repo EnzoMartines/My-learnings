@@ -1,0 +1,81 @@
+<meta charset="UTF-8">
+
+<input/>
+<button>Compare with my secret</button>
+
+<script>
+    function draw() {
+
+       return Math.round(Math.random() * 10);
+
+    }
+
+    function drawNumbers(quantity) {
+
+        var secrets = [];
+
+        var number = 1;
+
+        while(number <= quantity) {
+
+              var randomNumber = draw();
+              var found = false;
+
+              if (randomNumber !== 0) {
+                     for(var position = 0; position < secrets.length; position++) {
+
+                           if(secrets[position] == randomNumber){
+                                found = true;
+                                break;
+                           }
+
+                     }
+
+                     if (found == false) {
+                           secrets.push(randomNumber);
+                           number++;
+                     }
+              }
+
+        }
+
+        return secrets;
+
+    }
+
+    var secrets = drawNumbers(3);
+
+    console.log(secrets);
+
+    var input = document.querySelector("input");
+    input.focus();
+
+    function verify() {
+
+       var found = false;
+
+       for(var position = 0; position < secrets.length; position++) {
+
+              if(input.value == secrets[position]) {
+
+                     alert("You're right!");
+                     found = true;
+                     break;
+              } 
+       }
+
+       if(found == false) {
+
+              alert("You're wrong");
+       }
+
+       input.value = "";
+       input.focus();
+
+    }
+
+    var button = document.querySelector("button");
+
+    button.onclick = verify;
+
+</script>

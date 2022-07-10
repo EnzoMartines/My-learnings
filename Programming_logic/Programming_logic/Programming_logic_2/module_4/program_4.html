@@ -1,0 +1,38 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+	
+	var screen = document.querySelector("canvas")
+	var pincel = screen.getContext("2d")
+	pincel.fillStyle = "lightgrey"
+	pincel.fillRect(0, 0, 600, 400)
+
+	function drawCircle(x, y, arc) {
+
+		pincel.fillStyle = "blue"
+		pincel.beginPath()
+		pincel.arc(x, y, arc, 0, 2*Math.PI)
+		pincel.fill()
+
+
+	}
+
+	function clearScreen() {
+		pincel.clearRect(0, 0, 600, 400)
+		
+	}
+
+	var x = 20
+
+	function updateScreen() {
+
+		clearScreen
+		drawCircle(x, 20, 10)
+		x++
+
+	}
+
+	setInterval(updateScreen, 10)
+
+
+</script>

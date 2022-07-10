@@ -1,0 +1,23 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+	
+function drawCircle(x, y, w, zero, ) {
+
+	var screen = document.querySelector("canvas")
+	var pincel = screen.getContext("2d")
+
+	pincel.fillStyle = "grey"
+	pincel.fillRect(0, 0, 600, 400)
+
+	pincel.fillStyle = "blue"
+	pincel.beginPath()
+	pincel.arc(300, 200, 50, 0, 4 * 3.14)
+	pincel.fill()
+
+}
+
+drawCircle()
+
+
+</script>

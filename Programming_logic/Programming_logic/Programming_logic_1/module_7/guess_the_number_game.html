@@ -1,0 +1,29 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function jumpLine() {
+
+        document.write("<br>");
+        document.write("<br>");
+}
+
+    function jumpLine(frase) {
+
+        document.write(frase);
+        pulaLinha();
+}
+
+var thinkedNumber = Math.round(Math.random() * 10);
+
+var guess = parseInt(prompt("write your guess!"));
+
+if(guess == thinkedNumber) {
+
+    mostra("You're right!");
+} else {
+
+    mostra("You are wrong, the thinked number was " + thinkedNumber);
+}
+
+</script>

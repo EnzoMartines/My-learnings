@@ -1,0 +1,62 @@
+<canvas width="600"  height="400"></canvas>
+
+<script>
+	
+var screen = document.querySelector("canvas")
+var pincel = screen.getContext("2d")
+
+pincel.fillStyle = "grey"
+pincel.fillRect(0, 0, 600, 400)
+
+var colors = ["red", "yellow", "green", "blue"]
+var actualColor = 0
+var arc = 10
+
+function drawCircle(event) {
+
+	var x = event.pageX - screen.offsetLeft 
+	var y = event.pageY - screen.offsetTop
+
+	
+
+	console.log(x + "," + y)
+
+	if(event.shiftKey) {
+
+		arc = arc +20
+
+	}
+
+	pincel.fillStyle = colors[actualColor]
+	pincel.beginPath()
+	pincel.arc(x, y, arc, 0, 2 * 3.14)
+	pincel.fill()
+	
+
+
+}
+
+	screen.onclick = drawCircle
+
+
+function changecolor() {
+
+	actualColor++
+
+	if(actualColor >= colors.length)
+		actualColor = 0
+
+
+
+	return false
+}
+
+screen.oncontextmenu = changecolor
+
+
+
+
+
+
+
+</script>

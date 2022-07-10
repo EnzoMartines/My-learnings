@@ -1,0 +1,33 @@
+<meta charset="utf-8">
+
+<input/>
+<button>Knowledge</button>
+
+<script>
+	var secret = Math.round(Math.random() * 10 );
+	alert(secret)
+
+	var input = document.querySelector("input");
+	input.focus();
+
+	function testing() {
+
+		if(input.value == secret) {
+
+		alert("You're right!!!!");
+
+	} else {
+
+		alert("You're wrong!");
+
+	}
+
+	input.value = "";
+	input.focus();
+
+}	
+
+	var button = document.querySelector("button");
+	button.onclick = testing;
+
+</script>

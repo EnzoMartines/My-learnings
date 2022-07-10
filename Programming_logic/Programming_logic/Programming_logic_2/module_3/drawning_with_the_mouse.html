@@ -1,0 +1,40 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+
+    pincel.fillStyle = 'grey';
+    pincel.fillRect(0, 0, 600, 400);
+
+    var draw = false;
+
+    function drawCircle(event) {
+
+        if(draw) {
+            var x = event.pageX - tela.offsetLeft;
+            var y = event.pageY - tela.offsetTop;
+            pincel.fillStyle = 'green';
+            pincel.beginPath();
+            pincel.arc(x, y, 10, 0, 2 * 3.14);
+            pincel.fill();
+        }
+        console.log(x + ',' + y);
+    }
+
+    tela.onmousemove = drawCircle
+
+    function enableDrawn() {
+
+        draw = true
+    }
+
+    function disableDrawn() {
+
+        draw = false
+    }
+
+    tela.onmousedown = enableDrawn
+    tela.onmouseup = disableDrawn
+
+</script>

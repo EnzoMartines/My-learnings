@@ -1,0 +1,29 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+function drawSquare(x, y, l, h, color) {
+
+	var screen = document.querySelector("canvas");
+	var pincel = screen.getContext("2d");
+
+	pincel.fillStyle = color;
+	pincel.fillRect(x, y, l, h)
+	pincel.fillStroke = "black"
+	pincel.strokeRect(x, y, l, h)
+
+}
+
+drawSquare(0, 0, 600, 400, "white")
+drawSquare(0, 0, 200, 400, "green")
+drawSquare(400, 0, 200, 400, "red")
+
+
+
+
+
+
+
+
+
+</script>
